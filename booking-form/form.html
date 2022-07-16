@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment form | Quantum Designs</title>
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="/assets/favicon.png" type="image/png">
+</head>
+<body>
+    <div id="nav-bar">
+      <a href="/" id="logo"><img src="/assets/QD-logo_transparent.png" alt=""></a>
+      <a href="#footer" class="nav-link"><button id="nav-btn">Contact</button></a>
+    </div>
+    <div class="page">
+        <h3 style="font-size: 2em; text-align: center;">NEW CLIENT QUESTIONNAIRE</h3>
+        <div class="row bigrow">
+            <form action="" class="col s12" id="client-form">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="first_name" type="text" class="validate" required>
+                  <label for="first_name">First Name</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate" required>
+                  <label for="last_name">Last Name</label>
+                </div>
+              </div>
+              </div>
+            
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate" required>
+                  <label for="email">Email</label>
+                  <span class="helper-text"></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="telephone" type="tel" class="validate" pattern="[0-9|+|()]{7,13}" required>
+                  <label for="telephone">Phone</label>
+                </div>
+              </div>
+
+              <h5>Project Address</h5>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="address" type="text" class="validate" required>
+                  <label for="address">Address</label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="city" type="text" class="validate" required>
+                  <label for="city">City</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="state" type="text" class="validate" required>
+                    <label for="state">State</label>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="zip-code" type="text" class="validate" required>
+                  <label for="zip-code">Zip/Postal Code</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="country" type="text" class="validate" required>
+                    <label for="country">Country</label>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6" id="select">
+                    <select>
+                      <option value="" disabled selected>Choose a service</option>
+                      <option value="1">Full-design service ($1800)</option>
+                      <option value="2">Design consultation ($200/hr)</option>
+                      <option value="3">Floor plan review ($500)</option>
+                    </select>
+                    <label>Design services</label>
+                  </div>
+              </div>
+
+              <input type="submit" id="submit-btn" value="SUBMIT">
+
+              <p id="success-msg"></p>
+              
+            </form>
+        </div>
+        <footer id="footer">
+          <div class="footer-section address" id="footer-left">
+            <p>673, Ademola Adetokumbo Crescent,<br> Wuse 904101, Abuja, Nigeria</p>
+            <div class="contact-icons">
+                <p><i class="fa-solid fa-phone"></i>+234-813-7962-011</p>
+                <p><i class="fa-solid fa-envelope"></i>quantumdesigns@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="footer-section contact" id="footer-right">
+                <div class="footer-section socials" id="socials">
+                    <a href=""><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram-square"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                </div>
+                <span id="copyright">Quantum Designs &copy 2022</span>
+          </div>
+        </footer>
+    </div>
+
+    <script src="https://kit.fontawesome.com/06c340740d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script>
+
+        M.AutoInit();
+
+        let successMessage = document.getElementById('success-msg'),
+            clientForm = document.getElementById('client-form');
+
+        clientForm.addEventListener('submit', e=>{
+            event.preventDefault()
+            successMessage.innerHTML = 'Thank you!';
+            clientForm.reset();
+        })
+        
+    </script>
+
+</body>
+</html>
